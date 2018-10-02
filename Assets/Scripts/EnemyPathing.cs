@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour {
 
-    [SerializeField] List<Transform> enemyWaypoints;
+    [SerializeField] WaveConfig waveConfig;
+
+    List<Transform> enemyWaypoints;
     [SerializeField] float enemyMoveSpeed = 5f;
 
     int waypointIndex = 0;
 
 	// Use this for initialization
 	void Start () {
+        enemyWaypoints = waveConfig.GetWaypoints();
         // start at position 0
         transform.position = enemyWaypoints[waypointIndex].transform.position;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
