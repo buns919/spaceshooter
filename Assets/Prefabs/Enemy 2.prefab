@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4728982513074210}
   - component: {fileID: 212940352111513562}
   - component: {fileID: 114343704879028868}
+  - component: {fileID: 114254845262706474}
+  - component: {fileID: 60162480792462374}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -35,12 +37,58 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1325063861964404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.27, y: 10.51, z: 0}
+  m_LocalPosition: {x: 1.41, y: -3.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60162480792462374
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325063861964404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.03, y: 0.84}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.09222996, y: -0.3247645}
+      - {x: 0.09114945, y: -0.33060932}
+      - {x: 0.37729883, y: -0.41030478}
+      - {x: 0.5053046, y: 0.020138025}
+      - {x: 0.24175858, y: 0.35753465}
+      - {x: 0.06821275, y: 0.41584492}
+      - {x: -0.076218486, y: 0.41723013}
+      - {x: -0.2585746, y: 0.3542931}
+      - {x: -0.5108449, y: 0.00972414}
+      - {x: -0.3728391, y: -0.41307497}
+--- !u!114 &114254845262706474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325063861964404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca04a11b19bd634bb04bbb71de8ea4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!114 &114343704879028868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a067f7a48c3343b25a586a20c7ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: b6bcbf6eda8dbcc48b3a72b682f239e3, type: 2}
-  enemyMoveSpeed: 2
 --- !u!212 &212940352111513562
 SpriteRenderer:
   m_ObjectHideFlags: 1

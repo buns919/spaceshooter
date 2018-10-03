@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212203396689319370}
   - component: {fileID: 50620204265133928}
   - component: {fileID: 70430370356575722}
+  - component: {fileID: 114581436945527620}
   m_Layer: 0
   m_Name: PlayerDefaultLaser
   m_TagString: Untagged
@@ -71,12 +72,24 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.09, y: 0.37}
   m_Direction: 0
+--- !u!114 &114581436945527620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698080620727602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4f9fc887e92d04786e811a332fdc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!212 &212203396689319370
 SpriteRenderer:
   m_ObjectHideFlags: 1
