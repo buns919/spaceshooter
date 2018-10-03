@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
 
     IEnumerator FireContinuously() {
         while (true) {
-            GameObject laserInstance = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            GameObject laserInstance = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laserInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, laserSpeed);
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
