@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50620204265133928}
   - component: {fileID: 70430370356575722}
   - component: {fileID: 114581436945527620}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyDefaultLaser 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,8 +75,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.09, y: 0.37}
+  m_Offset: {x: -0.0011970699, y: 0.00059843063}
+  m_Size: {x: 0.14985359, y: 0.6153997}
   m_Direction: 0
 --- !u!114 &114581436945527620
 MonoBehaviour:

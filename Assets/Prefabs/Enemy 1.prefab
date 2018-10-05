@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114353000588391730}
   - component: {fileID: 114377009537806642}
   - component: {fileID: 60731739811928148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,8 +105,8 @@ MonoBehaviour:
   laserSpeed: 6
   health: 100
   shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 2.5
+  minTimeBetweenShots: 0.5
+  maxTimeBetweenShots: 3
 --- !u!212 &212363383327200832
 SpriteRenderer:
   m_ObjectHideFlags: 1

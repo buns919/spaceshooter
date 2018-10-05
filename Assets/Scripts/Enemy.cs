@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour {
     // serialized for debug
     [SerializeField] float health = 100;
     [SerializeField] float shotCounter;
-    [SerializeField] float minTimeBetweenShots = .2f;
-    [SerializeField] float maxTimeBetweenShots = 2.5f;
+    [SerializeField] float minTimeBetweenShots = .5f;
+    [SerializeField] float maxTimeBetweenShots = 3.5f;
     
 
     // Use this for initialization
@@ -42,11 +42,15 @@ public class Enemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
+        if (!damageDealer) {
+            return;
+        }
         ProcessHit(damageDealer);
     }
 
     private void ProcessHit(DamageDealer damageDealer) {
         health -= damageDealer.GetDamage();
+        damageDealer.Hit();
         if (health <= 0) {
             Destroy(gameObject);
         }
