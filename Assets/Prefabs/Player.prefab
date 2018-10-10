@@ -95,6 +95,10 @@ MonoBehaviour:
   verticalMoveSpeed: 15
   padding: 0.5
   health: 200
+  playerDeathSound: {fileID: 8300000, guid: e095c8dca7f6f4c43826e349a6d95892, type: 3}
+  playerDeathSoundVolume: 0.7
+  playerLaserSound: {fileID: 8300000, guid: 1364f921626645645a21fbc3ca8d738c, type: 3}
+  playerLaserSoundVolume: 0.2
   laserPrefab: {fileID: 1698080620727602, guid: 346dd4eebe5ca234e87e5cff6a3062ce,
     type: 2}
   laserSpeed: 15

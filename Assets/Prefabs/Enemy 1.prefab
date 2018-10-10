@@ -106,6 +106,10 @@ MonoBehaviour:
   laserPrefab: {fileID: 1698080620727602, guid: f9778d1bc24b22c4e9872054c1b1b0cf,
     type: 2}
   laserSpeed: 6
+  enemyDeathSound: {fileID: 8300000, guid: 6ff698f67d24d8144a1cc1f416f35b99, type: 3}
+  enemyDeathSoundVolume: 0.5
+  enemyLaserSound: {fileID: 8300000, guid: c96063b5ae5c1fe4c903e44d5a19c9c4, type: 3}
+  enemyLaserSoundVolume: 0.1
   health: 100
   shotCounter: 0
   minTimeBetweenShots: 0.5

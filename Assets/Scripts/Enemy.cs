@@ -12,6 +12,12 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float laserSpeed = 1f;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip enemyDeathSound;
+    [SerializeField][Range(0f, 1f)] float enemyDeathSoundVolume = .7f;
+    [SerializeField] AudioClip enemyLaserSound;
+    [SerializeField][Range(0f, 1f)] float enemyLaserSoundVolume = .3f;
+
     // serialized for debug
     [Header("Debug")]
     [SerializeField] float health = 100;
@@ -41,6 +47,7 @@ public class Enemy : MonoBehaviour {
         while (true) {
             GameObject laserInstance = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laserInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -laserSpeed);
+            AudioSource.PlayClipAtPoint(enemyLaserSound, Camera.main.transform.position, enemyLaserSoundVolume);
             yield return new WaitForSeconds(shotCounter);
             shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
         }
@@ -68,7 +75,7 @@ public class Enemy : MonoBehaviour {
             transform.position,
             Quaternion.identity
         );
-
+        AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, enemyDeathSoundVolume);
         Destroy(gameObject);
         Destroy(explosionParticles, durationOfExplosion);
     }
