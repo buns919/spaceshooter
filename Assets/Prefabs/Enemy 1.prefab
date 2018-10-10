@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca04a11b19bd634bb04bbb71de8ea4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionParticlePrefab: {fileID: 1433230505739106, guid: 5ff357f64d97f4d40b29265bf2fee338,
+    type: 2}
+  durationOfExplosion: 1
   laserPrefab: {fileID: 1698080620727602, guid: f9778d1bc24b22c4e9872054c1b1b0cf,
     type: 2}
   laserSpeed: 6

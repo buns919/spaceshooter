@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    [Header("Particle")]
+    [SerializeField] GameObject explosionParticlePrefab;
+    [SerializeField] float durationOfExplosion = 1f;
+
+    [Header("Laser")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float laserSpeed = 1f;
 
     // serialized for debug
+    [Header("Debug")]
     [SerializeField] float health = 100;
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = .5f;
@@ -52,8 +58,19 @@ public class Enemy : MonoBehaviour {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0) {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die() {
+        GameObject explosionParticles = Instantiate(
+            explosionParticlePrefab,
+            transform.position,
+            Quaternion.identity
+        );
+
+        Destroy(gameObject);
+        Destroy(explosionParticles, durationOfExplosion);
     }
 }
 
