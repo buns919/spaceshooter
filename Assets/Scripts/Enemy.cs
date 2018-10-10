@@ -24,16 +24,22 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = .5f;
     [SerializeField] float maxTimeBetweenShots = 3.5f;
+    [SerializeField] bool disableLasers = false;
+
+    Level level;
     
 
     // Use this for initialization
     void Start() {
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        level = FindObjectOfType<Level>();
     }
 
     // Update is called once per frame
     void Update() {
-        CountDownAndShoot();
+        if (!disableLasers && level.GetPlayerIsAlive()) {
+            CountDownAndShoot();
+        }
     }
 
     private void CountDownAndShoot() {

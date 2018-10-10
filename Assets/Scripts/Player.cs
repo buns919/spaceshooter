@@ -27,9 +27,11 @@ public class Player : MonoBehaviour {
     float xMax;
     float yMin;
     float yMax;
+    Level level;
 
     // Use this for initialization
     void Start () {
+        level = FindObjectOfType<Level>();
         SetupMoveBoundaries();
 	}
 
@@ -91,8 +93,14 @@ public class Player : MonoBehaviour {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0) {
-            AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die() {
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
+        level.LoadGameOver();
+        Destroy(gameObject);
+        level.SetPlayerIsAlive(false);
     }
 }
