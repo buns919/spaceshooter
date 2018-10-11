@@ -80,15 +80,15 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Die() {
+        gameSession.AddToScore(scorePointsOnDeath);
         GameObject explosionParticles = Instantiate(
             explosionParticlePrefab,
             transform.position,
             Quaternion.identity
         );
         AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, enemyDeathSoundVolume);
-        gameSession.AddToScore(scorePointsOnDeath);
-        Destroy(gameObject);
         Destroy(explosionParticles, durationOfExplosion);
+        Destroy(gameObject);
     }
 }
 

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float horizontalMoveSpeed = 10f;
     [SerializeField] float verticalMoveSpeed = 11f;
     [SerializeField] float padding = 1f;
-    [SerializeField] int health = 200;
+    [SerializeField] int health = 3;
 
     [Header("Sounds")]
     [SerializeField] AudioClip playerDeathSound;
@@ -102,5 +102,9 @@ public class Player : MonoBehaviour {
         level.LoadGameOver();
         Destroy(gameObject);
         level.SetPlayerIsAlive(false);
+    }
+
+    public int GetHealth() {
+        return health;
     }
 }

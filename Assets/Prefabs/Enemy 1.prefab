@@ -122,12 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca04a11b19bd634bb04bbb71de8ea4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticlePrefab: {fileID: 1433230505739106, guid: 5ff357f64d97f4d40b29265bf2fee338,
-    type: 2}
-  durationOfExplosion: 1
+  scorePointsOnDeath: 181
   laserPrefab: {fileID: 1698080620727602, guid: f9778d1bc24b22c4e9872054c1b1b0cf,
     type: 2}
   laserSpeed: 6
+  explosionParticlePrefab: {fileID: 1433230505739106, guid: 5ff357f64d97f4d40b29265bf2fee338,
+    type: 2}
+  durationOfExplosion: 1
   enemyDeathSound: {fileID: 8300000, guid: 6ff698f67d24d8144a1cc1f416f35b99, type: 3}
   enemyDeathSoundVolume: 0.5
   enemyLaserSound: {fileID: 8300000, guid: c96063b5ae5c1fe4c903e44d5a19c9c4, type: 3}
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f9fc887e92d04786e811a332fdc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 1
 --- !u!212 &212363383327200832
 SpriteRenderer:
   m_ObjectHideFlags: 1
