@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-    [Header("Particle")]
-    [SerializeField] GameObject explosionParticlePrefab;
-    [SerializeField] float durationOfExplosion = 1f;
+    [Header("Enemy Settings")]
+    [SerializeField] int scorePointsOnDeath = 180;
 
     [Header("Laser")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float laserSpeed = 1f;
+
+    [Header("Particle")]
+    [SerializeField] GameObject explosionParticlePrefab;
+    [SerializeField] float durationOfExplosion = 1f;
 
     [Header("Sounds")]
     [SerializeField] AudioClip enemyDeathSound;
@@ -27,12 +30,13 @@ public class Enemy : MonoBehaviour {
     [SerializeField] bool disableLasers = false;
 
     Level level;
-    
+    GameSession gameSession;
 
     // Use this for initialization
     void Start() {
         shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
         level = FindObjectOfType<Level>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame
@@ -82,6 +86,7 @@ public class Enemy : MonoBehaviour {
             Quaternion.identity
         );
         AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, enemyDeathSoundVolume);
+        gameSession.AddToScore(scorePointsOnDeath);
         Destroy(gameObject);
         Destroy(explosionParticles, durationOfExplosion);
     }

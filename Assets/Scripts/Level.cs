@@ -22,6 +22,7 @@ public class Level : MonoBehaviour {
     }
 
     public void LoadGameOver() {
+        FindObjectOfType<GameSession>().ResetGame();
         StartCoroutine(DelayLoadGameOver());
     }
 
